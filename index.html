@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+.newemp {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  
+  width: 280px;
+}
+
+.form-popup {
+  display: none;
+  margin:auto;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+
+.form-container {
+margin:auto;
+
+  padding: 10px;
+  background-color: white;
+}
+
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+
+.form-container .cancel {
+  background-color: red;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.b {
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+
+
+
+
+
+</head>
+<body  class="b">
+<h2  align="center" style="color:white;  font-family:sans-serif;"><i>Saarthi.AI</i></h2>
+
+<div align="center">
+<button class="newemp" onclick="openForm()">NewEmployee</button>
+</div>
+
+<div class="form-popup" id="myForm">
+
+  <form class="form-container" action="my.php" method="GET">
+    <h1>User Registration Form</h1>
+
+    <label for="empname"><b>NAME:</b></label>
+    <input type="text" placeholder="Enter Employee Name" name="name" required>
+
+    <label for="empid"><b>Employee ID</b></label>
+    <input type="text" placeholder="Enter Employee Id" name="empid" required>
+    
+    <label for="dept"><b>Department</b></label>
+    <select id="dept"  name="dept" required>
+        <option value="" name="none">select Any</option>
+        <option value="HR" name="dept">HR</option>
+        <option value="MANAGER" name="dept">MANAGER</option>
+        <option value="IT" name="dept">IT</option>
+        <option value="ACCOUNTS" name="dept">ACCOUNTS</option>
+        <option value="others" name="dept">Others</option>
+     </select>
+     </br>
+     </br>
+    <label for="email"><b>Email:</b></label>
+    <input type="text" placeholder="Enter email" name="email" required>
+    
+    <label for="DOJ"><b>DOJ:</b></label>
+<input type="date"  id="DOJ" name="DOJ" required>
+
+<br>
+<br>
+<button type="submit" class="btn">Submit</button>
+<input type="reset" value="Clear" class="btn cancel">
+   
+    
+     
+
+ </form>
+
+<script>
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+</script>
+ 
+</div>
+
+
+
+
+</body>
+</html>
